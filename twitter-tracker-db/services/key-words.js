@@ -7,8 +7,8 @@ class KeyWordService {
     this.mongoDb = new MongoLib()
   }
 
-  async getKeyWords (query = {}) {
-    const list = await this.mongoDb.getAll(this.collection, query)
+  async getKeyWords (query = {}, limit) {
+    const list = await this.mongoDb.getAll(this.collection, query, limit)
     return list || []
   }
 

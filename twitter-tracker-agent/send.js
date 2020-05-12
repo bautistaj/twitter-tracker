@@ -2,7 +2,7 @@
 'use strict'
 const amqp = require('amqplib/callback_api');
 
-async function sendTweet({tweet}){
+async function sendTweet({newTweet}){
   amqp.connect('amqp://localhost', function(error0, connection) {
     if (error0) {
       throw error0;
@@ -19,14 +19,13 @@ async function sendTweet({tweet}){
         durable: false
       });
   
-      channel.sendToQueue(queue, Buffer.from(JSON.stringify(tweet)));
-      console.log(" [x] Sent %s", tweet.id);
+      channel.sendToQueue(queue, Buffer.from(JSON.stringify(newTweet)));
+      console.log(" [x] Sent %s", newTweet.id);
     });
   
     setTimeout(function() {
       console.log('Close');
       connection.close();
-      process.exit(0);
     }, 500);
   });
 }

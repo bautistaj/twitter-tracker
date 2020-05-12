@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "twitter-tracker-db": "file:../twitter-tracker-db",
-    "twitter-tracker-agent": "file:../twitter-tracker-agent",
     "dotenv": "^8.2.0",
-    "twitter": "^1.7.1"
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1",
+    "twitter-tracker-agent": "file:../twitter-tracker-agent",
+    "twitter-tracker-db": "file:../twitter-tracker-db"
   }
 }

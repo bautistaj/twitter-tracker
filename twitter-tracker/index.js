@@ -29,7 +29,8 @@ async function searchTweets(keyword) {
 
 if (!module.parent) {
   const keyWordService = new KeyWordService()
-  keyWordService.getKeyWords().then(keyword => {
+  
+  keyWordService.getKeyWords({}, 50).then(keyword => {
     keyword.map(word => {
       console.log(`Searching keword: ${word.name}`);
       searchTweets(word.name)
